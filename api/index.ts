@@ -9,8 +9,18 @@ dotenv.config();
 const app = express();
 const upload = multer();
 
+const allowedOrigins = [
+  'https://bitnovo-frontend.vercel.app',
+  'http://localhost:3000'
+];
+
+
+if (process.env.FRONTEND_URL) {
+  allowedOrigins.push(process.env.FRONTEND_URL);
+}
+
 app.use(cors({
-  origin: process.env.FRONTEND_URL,
+  origin: allowedOrigins,
   credentials: true
 }));
 
@@ -19,7 +29,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(upload.none()); 
 
 app.use('/api', paymentRoutes);
-
 
 if (process.env.NODE_ENV !== 'production') {
   const PORT = process.env.PORT || 4000;
