@@ -4,20 +4,15 @@
   "description": "Backend for Bitnovo",
   "main": "api/index.js",
   "scripts": {
-    "start": "node dist/index.js",
+    "start": "node api/index.js",
     "dev": "ts-node-dev --respawn --transpile-only ./api/index.ts",
     "build": "tsc",
-    "vercel-build": "tsc",
+    "vercel-build": "npx tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Andres",
   "license": "ISC",
   "dependencies": {
-    "@types/cors": "^2.8.17",
-    "@types/express": "^5.0.0",
-    "@types/form-data": "^2.2.1",
-    "@types/multer": "^1.4.12",
-    "@types/node": "^22.13.1",
     "axios": "^1.7.9",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
@@ -25,7 +20,14 @@
     "express": "^4.21.2",
     "form-data": "^4.0.1",
     "multer": "^1.4.5-lts.1",
-    "qrcode.react": "^4.2.0",
+    "qrcode.react": "^4.2.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/form-data": "^2.2.1",
+    "@types/multer": "^1.4.12",
+    "@types/node": "^22.13.1",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.7.3"
   },
