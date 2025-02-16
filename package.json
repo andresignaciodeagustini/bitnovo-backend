@@ -7,11 +7,9 @@
     "start": "node api/index.js",
     "dev": "ts-node-dev --respawn --transpile-only ./api/index.ts",
     "build": "tsc",
-    "vercel-build": "npx tsc",
+    "vercel-build": "echo 'Building...'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Andres",
-  "license": "ISC",
   "dependencies": {
     "axios": "^1.7.9",
     "cors": "^2.8.5",
@@ -32,6 +30,6 @@
     "typescript": "^5.7.3"
   },
   "engines": {
-    "node": ">=14.0.0"
+    "node": "18.x"
   }
 }
